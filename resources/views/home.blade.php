@@ -4,7 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    
+    <?php use App\Http\Controllers\HomeController; ?>
+    <?php $collection=HomeController::initJS();?>
+    <?php foreach ($collection as $item):?>
+    <script src="/js/<?php echo $item;?>"></script>
+    <?php endforeach;?>
     <link href="/product_page.css" rel="stylesheet">
     <link href="/colors.css" rel="stylesheet">
     <link href="/style.css" rel="stylesheet">
@@ -17,8 +21,8 @@
     <title><?php echo "Home"; ?></title>
 </head>
 <body class="<?php echo "light_mode"; ?>">
-    <?php use App\Http\Controllers\HomeController; ?>
-    <?php var_dump(HomeController::initJS()); ?>
+   
+    
 
     <header>
         <!-- Menù iniziale con logo e login-->
