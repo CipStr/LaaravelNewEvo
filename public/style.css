@@ -1,0 +1,428 @@
+
+html, body, ul, p{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.icon {
+  filter: invert(var(--filter));
+}
+body {
+  background-color: var(--body_background);
+}
+/*HEADER OF THE PAGE*/
+
+body > header {
+  background-color: var(--header-background);
+  box-sizing: border-box;
+}
+header > nav {
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+header > nav > a{
+  display: inline-block;
+  text-align: center;
+  margin: 3.5px 2px;
+  width: 50px;
+  height: 50px;
+}
+header > nav > a.cart, header > nav > a.menu{
+  float: right
+}
+header > nav > a.cart span{
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  background-color: var(--cart);
+  border-radius: 100%;
+  padding: 4px;
+}
+header > nav > a.login , header > nav > a.account {
+  float: left;
+}
+header > nav > a {
+  color: var(--text);
+  text-decoration: none;
+}
+header > nav > a:hover p{
+  color: var(--header-hover);
+}
+header > nav > a:hover > img{
+  transform: rotate(360deg);
+  transition-duration: 1s;
+}
+header > nav > a > img {
+  max-width: 60%;
+  max-height: 60%;
+}
+header > nav > a.logo > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+header > nav > a > p {
+  font-size: 12px;
+  cursor: pointer;
+}
+.removable {
+  display: none;
+}
+/*STICKY NAVBAR*/
+body > nav.stickynav > ul{
+  list-style: none;
+  width: 100%;
+  white-space: nowrap;
+  z-index: 3;
+}
+body > nav.stickynav ul li{
+  text-decoration: none;
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+body > nav.stickynav ul li a {
+  margin: 2px 0.5px;
+  box-sizing: border-box;
+  border: 1px solid var(--stickynav-border);
+  background-color: var(--stickynav-background);
+  backdrop-filter: saturate(180%) blur(50px);
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  text-decoration: none;
+  color: var(--text);
+  overflow: hidden;
+  padding: 5px;
+}
+body > nav.stickynav ul li img {
+  padding-top: 5px;
+  width: 30px;
+}
+body > nav.stickynav > ul > li p {
+  font-size: 14px;
+}
+/*MAIN*/
+
+main > section:first-of-type{
+  margin: 26px 0 30px 0;
+} 
+main > section > h2{
+  color: var(--text);
+  margin-top: 0;
+  text-align: center;
+  font-size: xx-large;
+}
+
+/*SALE PRODUCTS*/
+
+#forsale {
+  background-color: var(--sale-background);
+}
+#forsale > header > ul {
+  white-space: nowrap;
+  overflow: auto;
+  width: 100%;
+}
+#forsale > header {
+  background-color: var(--body_background);
+  display: inline-block;
+  width: 100%;
+}
+#forsale > header > h2 {
+  float: left;
+  color: var(--text);
+  margin: 0;
+  padding: 20px 0;
+}
+#forsale > header > a {
+  text-decoration: none;
+  float: right;
+  background-color: var(--header-main-button);
+  color: var(--text);
+  padding: 15px;
+  margin: 10px 5px 0 0;
+}
+#forsale > header > a:hover {
+  background-color: var(--header-hover);
+  transition-duration: 0.5s;
+}
+#forsale > header > ul > li {
+  display: inline-block;
+  width: 55%;
+}
+#forsale > header > ul > li > a {
+  margin: 10px;
+  color: var(--product-text);
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+}
+#forsale > header > ul > li > a > article > header > div {
+  width: 100%;
+  height: 150px;
+  padding: 20px 0;
+  background-color: var(--product-background);
+}
+#forsale > header > ul > li > a > article > section {
+  background-color: var(--product-text-background);
+  text-align: left;
+  padding: 10px;
+}
+#forsale > header > ul > li > a article:hover {
+  transition: 0.5s;
+  box-shadow: 0 8px 12px 0 var(--product-hover-shadow);
+}
+#forsale > header > ul > li > a article:hover div{
+  transition: 0.5s;
+  background-color: var(--header-hover);
+}
+#forsale > header > ul > li img {
+  border-radius: 20px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  padding: auto;
+}
+#forsale > header > ul li h3 {
+  margin: 10px 0 5px 0;
+  overflow-x: hidden;
+}
+#forsale > header > ul > li a p:first-of-type {
+  margin-bottom: 10px;
+  overflow-x: hidden;
+}
+#forsale > header > ul > li a del{
+  color: var(--grey);
+  display: inline;
+}
+#forsale > header > ul > li a p:not(:first-of-type) {
+  font-weight: bold;
+  color: var(--form-error);
+  display: inline;
+  margin-left: 5px;
+}
+/*SNACKBAR*/
+.snackbar {
+  position: fixed;
+  bottom: 0;
+  z-index: 4;
+  background-color: var(--snackbar-bg);
+  padding: 15px 0;
+  color: var(--text);
+  width: 70%;
+  margin: 10px 15%;
+  border-radius: 5px;
+  text-align: center;
+  display: none;
+  color: var(--white);
+}
+/*  BODY FOOTER */
+
+body > footer {
+  padding: 20px;
+  background-color: var(--footer-background);
+  bottom: 0%;
+}
+body > footer section {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: var(--text);
+  display: block;
+  text-align: center;
+}
+body > footer section + section:before {
+  border-top: 1px solid var(--text);
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+}
+body > footer section a{
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text);
+  margin-right: 5px;
+  width: 70px;
+}
+body > footer section div {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 6%;
+}
+body > footer section img{
+  max-height: 95%;
+  max-width: 95%;
+}
+body > footer section p {
+  font-size: 14px;
+}
+body > footer section:not(:last-of-type) a:hover {
+  color: var(--footer-link-hover);
+}
+body > footer section:not(:last-of-type) a:hover img{
+  max-height: 100%;
+  max-width: 100%;
+  transition-duration: 0.2s;
+  filter: sepia(100%);
+}
+/* ADMIN SELECTION PAGE*/
+main > nav > a {
+  color: var(--grey);
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  background-color: var(--sale-background);
+  margin-bottom: 2px;
+  border-radius: 5px;
+}
+main > nav > a:hover {
+  color: var(--white);
+}
+/*ADMIN DELETE TABLE*/
+.admintable {
+  width: 90%;
+  margin: 0 5%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  color: var(--text);
+} 
+.admintable td, .admintable th {
+  border: 1px solid var(--text);
+  padding: 5px 0;
+}
+.admintable td {
+  text-align: center;
+}
+.admintable td img {
+  max-width: 50px;
+  max-height: 50px;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+  
+  /* Make the images invisible by default */
+.Containers {
+  display: none;
+  overflow: hidden;
+}
+
+.Containers img{
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+main section:first-of-type div:not(:first-of-type){
+  text-align: center;
+}
+
+  /* forward & Back buttons */
+.back, .forward {
+  cursor: pointer;
+  position: absolute;
+  top: 48%;
+  margin: -23px 12px 0 10px;
+  padding: 20px 26px;
+  color: black;
+  font-weight: bold;
+  transition: 0.4s ease;
+  border-radius: 1000px;
+  border: 1px solid black;
+}
+  
+  /* Place the "forward button" to the right */
+.forward {
+  right: 0;
+}
+  
+  /*when the user hovers,add a black background with some little opacity */
+.back:hover, .forward:hover {
+  background-color: black;
+  color: white;
+}
+  
+  /* Caption Info */
+.Info {
+  color: black;
+  font-size: 16px;
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+  
+  /* Worknumbering (1/3 etc) */
+.MessageInfo {
+  color: black;
+  font-size: 14px;
+  padding: 10px 14px;
+  position: absolute;
+  top: 0;
+}
+  
+  /* The circles or bullets and indicators */
+.dots {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  margin: 0 3px;
+  background-color: #acc;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+  
+.enable, .dots:hover {
+  background-color: #717161;
+}
+  
+  /* Faint animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.4s;
+  animation-name: fade;
+  animation-duration: 1.4s;
+}
+  
+@-webkit-keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+  
+@keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  z-index: 1;
+	position: fixed;
+  top: 0px;
+}
+.sticky li a img {
+  display: none;
+}
+.sticky li p {
+  padding: 20px 0;
+}
+/* Class added to Main tag to prevent "lags" when scrolling */
+.content {
+  padding-top: 70px;
+}
+.selected{
+  background: linear-gradient(to top right, var(--footer-link-hover), var(--header-hover));
+  color: var(--sticky-selected-color);
+}
+.selected img {
+  filter: invert(var(--filter_hover));
+}
